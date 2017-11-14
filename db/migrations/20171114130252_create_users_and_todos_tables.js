@@ -14,7 +14,7 @@ exports.up = function(knex, Promise) {
     table.timestamp('updated_at').defaultTo(knex.fn.now());
     table.string('title').notNullable();
     table.boolean('completed').notNullable().defaultTo(false);
-    table.integer('user_id').referencess('id').inTable('users'); // foreign key that ties it to the users table
+    table.integer('user_id').references('id').inTable('users'); // foreign key that ties it to the users table
   });
 };
 
